@@ -5,7 +5,7 @@ An iOS library that solves Poochplay iOS Bluetooth Low Energy problems.
 Class exposes high level API for connecting and communicating with Bluetooth LE peripherals.
 The API is clean and easy to read.
 
-## Features (Version 0.0.1)
+## Features (Version 1.0.0)
 
 1. Connecting with bluetooth devices.
 2. Poochplay device battery percentage, Total step counts, Total calories burn.
@@ -25,7 +25,7 @@ To integrate PoochplaySDK into your Xcode project using CocoaPods, specify it in
 ```
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '11.0'
 use_frameworks!
 
 pod 'PoochplaySDK'
