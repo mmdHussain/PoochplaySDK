@@ -14,5 +14,10 @@ FOUNDATION_EXPORT double PoochplaySDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char PoochplaySDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <PoochplaySDK/PublicHeader.h>
+//
+//#import "CommonClass.h"
+//#import "AllBluetooth.h"
 
+#import "FBKApiBsaeMethod.h"
+#import "FBKApiOldBand.h"
 
