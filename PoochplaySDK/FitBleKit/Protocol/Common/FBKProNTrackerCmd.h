@@ -8,7 +8,7 @@
  ********************************************************************************/
 
 #import <Foundation/Foundation.h>
-#import "FBKDeviceNewBand.h"
+#import <FBKDeviceNewBand.h>
 
 @protocol FBKProNTrackerCmdDelegate <NSObject>
 

@@ -8,7 +8,7 @@
  ********************************************************************************/
 
 #import <Foundation/Foundation.h>
-#import "FBKDeviceUserInfo.h"
+#import <FBKDeviceUserInfo.h>
 
 @protocol FBKProOldScaleCmdDelegate <NSObject>
 

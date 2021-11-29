@@ -7,7 +7,7 @@
  * 创建日期：2017年11月20日
  ********************************************************************************/
 
-#import "FBKProtocolBase.h"
+#import <FBKProtocolBase.h>
 
 @interface FBKProtocolSkipping : FBKProtocolBase
 

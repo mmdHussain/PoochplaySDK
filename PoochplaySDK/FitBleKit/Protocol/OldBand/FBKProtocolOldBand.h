@@ -7,9 +7,9 @@
  * 创建日期：2017年11月20日
  ********************************************************************************/
 
-#import "FBKProtocolBase.h"
-#import "FBKProOldBandCmd.h"
-#import "FBKProOldBandAnalytical.h"
+#import <FBKProtocolBase.h>
+#import <FBKProOldBandCmd.h>
+#import <FBKProOldBandAnalytical.h>
 
 typedef enum{
     OTrackerCmdSetTime = 0,   // 手环时间

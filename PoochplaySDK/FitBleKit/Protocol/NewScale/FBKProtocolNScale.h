@@ -7,9 +7,9 @@
  * 创建日期：2017年11月18日
  ********************************************************************************/
 
-#import "FBKProtocolBase.h"
-#import "FBKProNTrackerCmd.h"
-#import "FBKProNTrackerAnalytical.h"
+#import <FBKProtocolBase.h>
+#import <FBKProNTrackerCmd.h>
+#import <FBKProNTrackerAnalytical.h>
 
 typedef enum{
     NScaleCmdSetTime = 0, // 手环时间

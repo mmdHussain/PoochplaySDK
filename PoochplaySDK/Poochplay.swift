@@ -75,7 +75,7 @@ public class Poochplay : NSObject{
     
     public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         debugPrint(peripheral.name ?? "")
-        debugPrint(peripheral.identifier.uuidString ?? "")
+        debugPrint(peripheral.identifier.uuidString)
         if (peripheral.name != nil && peripheral.name! == "PoochPlay"){
             self.poochplayDelegate?.allDeviceList(periferal: peripheral)
             //              self.peripheral = peripheral

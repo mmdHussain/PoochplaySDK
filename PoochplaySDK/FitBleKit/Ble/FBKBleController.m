@@ -38,10 +38,10 @@
 {
     self = [super init];
     
-    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [NSNumber numberWithBool:YES],
-                             CBCentralManagerOptionShowPowerAlertKey,
-                             nil];
+ //   NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+//                             [NSNumber numberWithBool:YES],
+ //                            CBCentralManagerOptionShowPowerAlertKey,
+ //                            nil];
     m_manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
     m_devicesArray  = [[NSMutableArray alloc] init];
     m_servicesArray = [[
@@ -268,7 +268,7 @@
 {
     switch (central.state)
     {
-        case CBCentralManagerStatePoweredOn:
+        case (CBManagerStatePoweredOn):
         {
             [self.delegate bleConnectStatus:DeviceBleIsOpen andDeviceType:m_deviceType];
             break;
@@ -325,11 +325,11 @@
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForDescriptor:(CBDescriptor *)descriptor error:(NSError *)error
 {
-    NSLog(descriptor.characteristic.UUID.UUIDString);
+  //  NSLog(descriptor.characteristic.UUID.UUIDString);
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverDescriptorsForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
-    NSLog(characteristic.UUID.UUIDString);
+ //   NSLog(characteristic.UUID.UUIDString);
 }
 
 //- (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
@@ -497,7 +497,7 @@
                 int i = *((char *)batteryBytes);
         
             //    int battery = bytesToInt(batteryBytes, 0)&0xff;
-                NSLog(@"%@", [NSString stringWithFormat:@"battery left:%d %",i]);
+      //          NSLog(@"%@", [NSString stringWithFormat:@"battery left:%d %",i]);
         
         self->m_batteryLevel = [NSNumber numberWithInt:i];
   //      [NSUserDefaults.standardUserDefaults setValue:(int)self->m_batteryLevel forKey:@"battery_level"];

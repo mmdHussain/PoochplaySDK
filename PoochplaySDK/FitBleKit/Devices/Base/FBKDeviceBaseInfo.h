@@ -63,7 +63,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-#import "FBKEnumList.h"
+#import <FBKEnumList.h>
 
 @interface FBKDeviceBaseInfo : NSObject
 

@@ -10,7 +10,7 @@
 #define   FBKLOGNTRACKERINFO  // 是否打印解析的结果数据
 
 #import <Foundation/Foundation.h>
-#import "FBKEnumList.h"
+#import <FBKEnumList.h>
 
 @protocol FBKProNTrackerBigDataDelegate <NSObject>
 

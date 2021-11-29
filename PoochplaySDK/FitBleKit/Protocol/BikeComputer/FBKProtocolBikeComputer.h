@@ -7,9 +7,9 @@
  * 创建日期：2018年02月02日
  ********************************************************************************/
 
-#import "FBKProtocolBase.h"
-#import "FBKProNTrackerCmd.h"
-#import "FBKProNTrackerAnalytical.h"
+#import <FBKProtocolBase.h>
+#import <FBKProNTrackerCmd.h>
+#import <FBKProNTrackerAnalytical.h>
 
 typedef enum{
     BikeComputerCmdSetTime = 0,  // 手环时间

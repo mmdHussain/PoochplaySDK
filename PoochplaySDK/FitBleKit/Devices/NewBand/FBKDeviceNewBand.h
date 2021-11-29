@@ -7,8 +7,8 @@
  * 创建日期：2017年11月01日
  ********************************************************************************/
 
-#import "FBKDeviceBaseInfo.h"
-#import "FBKDeviceUserInfo.h"
+#import <FBKDeviceBaseInfo.h>
+#import <FBKDeviceUserInfo.h>
 
 @interface FBKDeviceNewBand : FBKDeviceBaseInfo
 

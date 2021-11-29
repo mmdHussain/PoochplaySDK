@@ -7,9 +7,9 @@
  * 创建日期：2018年07月04日
  ********************************************************************************/
 
-#import "FBKProtocolBase.h"
-#import "FBKProNTrackerCmd.h"
-#import "FBKProNTrackerAnalytical.h"
+#import <FBKProtocolBase.h>
+#import <FBKProNTrackerCmd.h>
+#import <FBKProNTrackerAnalytical.h>
 
 typedef enum{
     HubConfigCmdLogin = 0,      // HUB登录

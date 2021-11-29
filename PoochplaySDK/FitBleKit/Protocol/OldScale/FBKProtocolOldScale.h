@@ -7,9 +7,9 @@
  * 创建日期：2017年11月20日
  ********************************************************************************/
 
-#import "FBKProtocolBase.h"
-#import "FBKProOldScaleCmd.h"
-#import "FBKProOldScaleAnalytical.h"
+#import <FBKProtocolBase.h>
+#import <FBKProOldScaleCmd.h>
+#import <FBKProOldScaleAnalytical.h>
 
 typedef enum{
     OldScaleCmdSetTime = 0, // 设置时间

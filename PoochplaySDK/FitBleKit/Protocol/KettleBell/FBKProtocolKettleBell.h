@@ -7,9 +7,9 @@
  * 创建日期：2018年04月02日
  ********************************************************************************/
 
-#import "FBKProtocolBase.h"
-#import "FBKProNTrackerCmd.h"
-#import "FBKProNTrackerAnalytical.h"
+#import <FBKProtocolBase.h>
+#import <FBKProNTrackerCmd.h>
+#import <FBKProNTrackerAnalytical.h>
 
 typedef enum{
     KettleBellCmdSetTime = 0,       // 手环时间
