@@ -1,132 +1,65 @@
 # PoochplaySDK
 BLE project to track acitvity.
 # PoochPlay BLE(Bluetoothy low energy) device Integration & device details.
-An Android library that solves Poochplay Android Bluetooth Low Energy problems. 
+An iOS library that solves Poochplay iOS Bluetooth Low Energy problems. 
 Class exposes high level API for connecting and communicating with Bluetooth LE peripherals.
 The API is clean and easy to read.
 
 ## Features (Version 0.0.1)
 
-**DataManager** class provides the following features:
+1. Connecting with bluetooth devices.
+2. Poochplay device battery percentage, Total step counts, Total calories burn.
 
-1. Scan device.
-2. Fetching all nearby poochplay bluetooth devices.
-3. Connecting with bluetooth devices.
-4. Poochplay device battery percentage, Total step counts, Total calories burn.
+#### Central
+- Scan for remote peripherals for a given time interval.
+- Continuously scan for remote peripherals for a give time interval, with an in-between delay until interrupted.
+- Connect to remote peripherals with a given time interval as time out.
+- Receive any size of data without having to worry about chunking.
 
-## Importing
+#### Peripheral
+- Start broadcasting with only a single function call.
+- Send any size of data to connected remote centrals without having to worry about chunking.
 
-#### Gradle dependency
 
-The library may be found on Jitpack.io. 
-Add it to your project gradle by adding the following dependency:
+To integrate PoochplaySDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
+```
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
 
-```Jipack maven
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven { url 'https://jitpack.io' }
-    }
-}
+pod 'BluetoothKit', '~> 0.2.0'
 ```
 
-Add this gradle dependency into the app gradle file.
-```gradle
-implementation 'com.github.Siyatech1808:ble-pp:0.0.1'
+Then, run the following command:
+
+```bash
+$ pod install
 ```
+
 
 ## How to Use this module after seting up all gradle.
 
-First we need to Initialize SDK into activity oncreate method, And for getting call back of every method, We need to implement **BleCallBacks**
+First we need to Initialize SDK into ViewCOntroller , And for getting call back of every method, We need to implement **Protocol**
 
-    DataManager.getInstance().setApplication(getApplication(), this);
+    let pooch = Poochplay()
+    
+    pooch.poochplayDelegate = self
+    
+    
+To establish the connection between your App and framework you need to connect with below method by passing CBCentralMAnager object and peripherral object with identifier to whom you want to connect.
 
-here **getapplication()** direct instance use for bluetooth method initializing. and **this** keyword is used to get call backs of methods after implementing **BleCallBacks**.
+    pooch.connectWithBle(uuid:"PERIPHERAL_UUIDSTRING",periferal:CBPeripheral, manager: CBCentralManager)
 
-    @Override
-    public void scanStart() {
-       Log.e(TAG, "Scan Start: ");
-    }
+After Implementing  **Protocol** you will start getting callback in below methods:- 
 
-    @Override
-    public void scanEnd() {
-        Log.e(TAG, "Scan end: ");
-    }
-
-    @Override
-    public void getDeviceList(List<BluetoothDevice> bluetoothDeviceList) {
-        Log.e(TAG, "Device List: " + bluetoothDeviceList.size);
-    }
-
-    @Override
-    public void getDevicePercentage(String batteryPercentage) {
-        Log.e(TAG, "Device Percentage: " + batteryPercentage);
-    }
-
-    @Override
-    public void getTotalCalories(String totalCalories) {
-        Log.e(TAG, "getTotalCalories: " + totalCalories);
-    }
-
-    @Override
-    public void getTotalSteps(String totalSteps) {
-        Log.e(TAG, "getTotalSteps: " + totalSteps);
-    }
-
-    @Override
-    public void startConnect() {
-        Log.e(TAG, "startConnect: ");
-    }
-
-    @Override
-    public void connectFailed(BluetoothDevice device) {
-        Log.e(TAG, "Connection failed: ");
-    }
-
-    @Override
-    public void connectSuccess(String macAddress) {
-        Log.e(TAG, "Connect Successfully: ");
+    func getBigData(_ bigDataDic: [AnyHashable : Any]!, andDevice bleDevice: Any!) {
+            // To get all untracked data in bulk
     }
     
-    @Override
-    public void getDeviceData(String deviceData) {
-        Log.e(TAG, "getDevicePercentage: " + deviceData);
+    func getRealTimeStepsData(_ stepsDic: [AnyHashable : Any]!, andDevice bleDevice: Any!, macId idString: String!, batterlyLevel btLevel: Int32) {
+                    // event emit in every seconds.
     }
-
-For using methods into the app to start scanning bluetooth on any click event or start activity :
-
-    DataManager.getInstance().scan();
-
-After scannig all the nearyby devices, getting callback into **getDeviceList(List<BluetoothDevice> bluetoothDeviceList)** method. Clicking on any search device, We need to connect poochplay ble device with the application. We need to use this method : 
-  
-    DataManager.getInstance().deviceConnect(lstDevices.get(position)); // lstDevices.get(position) =  searched poochplay bluetooth device.
-  
-After successfully connectting with ble device, We will get the callback into following methods with the device battery percentage, total steps & total calories.
-  
-    @Override
-    public void getDevicePercentage(String batteryPercentage) {
-        Log.e(TAG, "getDevicePercentage: " + batteryPercentage);
-    }
-
-    @Override
-    public void getTotalCalories(String totalCalories) {
-        Log.e(TAG, "getTotalCalories: " + totalCalories);
-    }
-
-    @Override
-    public void getTotalSteps(String totalSteps) {
-        Log.e(TAG, "getTotalSteps: " + totalSteps);
-    }
-  
-  
-## Andorid Required Permission
-    
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
     
 ## Version 0.0.1
 
