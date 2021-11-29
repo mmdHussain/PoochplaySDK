@@ -61,6 +61,6 @@ After Implementing  **Protocol** you will start getting callback in below method
                     // event emit in every seconds.
     }
     
-## Version 0.0.1
+## Version 1.0.0
 
-The BLE library v 0.0.1 is supported.
+The BLE library v 1.0.0 is supported.
