@@ -38,9 +38,9 @@ $ pod install
 ```
 
 
-## How to Use this module after seting up all gradle.
+## How to Use this module.
 
-First we need to Initialize SDK into ViewCOntroller , And for getting call back of every method, We need to implement **Protocol**
+First we need to Initialize SDK into ViewController and for getting call back of every method, We need to implement **Protocols**
 
     let pooch = Poochplay()
     
@@ -51,7 +51,7 @@ To establish the connection between your App and framework you need to connect w
 
     pooch.connectWithBle(uuid:"PERIPHERAL_UUIDSTRING",periferal:CBPeripheral, manager: CBCentralManager)
 
-After Implementing  **Protocol** you will start getting callback in below methods:- 
+After Implementing  **Protocols** you will start getting callback in below methods:- 
 
     func getBigData(_ bigDataDic: [AnyHashable : Any]!, andDevice bleDevice: Any!) {
             // To get all untracked data in bulk
